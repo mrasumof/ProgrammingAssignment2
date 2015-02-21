@@ -1,15 +1,24 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## Write a short comment describing this function
+### Sets the matrix to contain the inverse matrix passed as input
 
 makeCacheMatrix <- function(x = matrix()) {
-
+  
+  dimensions <- dim(x)
+  cols <- dimensions[2]
+  rows <- dimensions[1]
+  
+  if (cols == rows) {
+    inverse <<- matrix(0,cols,rows)
+    } 
+  else {
+    print("Matrix non-inversable, it should be a squared-matrix“)
+    return()
+  }   
 }
 
-
-## Write a short comment describing this function
-
-cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+cacheSolve <- function(x, …) {
+   
+   inverse <<- solve(x)
 }
